@@ -84,11 +84,11 @@ $posts_date = array_keys($posts_list);
 
 
       for ($j = 0; $j < count($posts); $j++) {
-        echo "<ul>";
-        echo "<li>" . $posts[$j]["title"] . "</li>";
-        echo "<li>" . $posts[$j]["author"] . "</li>";
-        echo "<li>" . $posts[$j]["text"] . "</li>";
-        echo "</ul><br>";
+        echo "<ul>" .
+          "<li>" . $posts[$j]["title"] . "</li>" .
+          "<li>" . $posts[$j]["author"] . "</li>" .
+          "<li>" . $posts[$j]["text"] . "</li>" .
+          "</ul><br>";
       }
     }
     ?>
