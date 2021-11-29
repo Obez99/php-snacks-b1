@@ -63,14 +63,36 @@ $posts_list = [
 ];
 
 $posts_date = array_keys($posts_list);
+?>
 
-for ($i = 0; $i < count($posts_list); $i++) {
-  echo $posts_date[$i] . "<br>";
-  $posts = $posts_list[$posts_date[$i]];
+<!DOCTYPE html>
+<html lang="en">
 
-  for ($j = 0; $j < count($posts); $j++) {
-    echo $posts[$j]["title"] . "<br>";
-    echo $posts[$j]["author"] . "<br>";
-    echo $posts[$j]["text"] . "<br><br>";
-  }
-}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snack2</title>
+</head>
+
+<body>
+  <ul>
+    <?php
+    for ($i = 0; $i < count($posts_list); $i++) {
+      echo "<li>" . $posts_date[$i] . "</li>";
+      $posts = $posts_list[$posts_date[$i]];
+
+
+      for ($j = 0; $j < count($posts); $j++) {
+        echo "<ul>";
+        echo "<li>" . $posts[$j]["title"] . "</li>";
+        echo "<li>" . $posts[$j]["author"] . "</li>";
+        echo "<li>" . $posts[$j]["text"] . "</li>";
+        echo "</ul><br>";
+      }
+    }
+    ?>
+  </ul>
+</body>
+
+</html>
