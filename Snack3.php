@@ -5,8 +5,17 @@
 
 $randomNumbers = [];
 
+
+$isFound = false;
+
 for ($i = 0; $i < 15; $i++) {
-  array_push($randomNumbers, rand(1, 100));
+  $randomNumber = rand(1, 100);
+  if (in_array($randomNumber, $randomNumbers)) {
+    $i--;
+  } else {
+    array_push($randomNumbers, $randomNumber);
+  }
 }
+
 
 var_dump($randomNumbers);
