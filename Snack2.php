@@ -5,7 +5,8 @@
 //e come valore un array di post associati a quella data. 
 //Stampare ogni data con i relativi post.
 
-$posts = [
+$posts_list = [
+
   "01/11/2021" => [
     [
       "title" => "Post1",
@@ -61,36 +62,15 @@ $posts = [
   ],
 ];
 
-$posts_titles = array_keys($posts);
+$posts_date = array_keys($posts_list);
 
+for ($i = 0; $i < count($posts_list); $i++) {
+  echo $posts_date[$i] . "<br>";
+  $posts = $posts_list[$posts_date[$i]];
 
-?>
-
-<!DOCTYPE html>
-<html lang="it">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Snack2</title>
-</head>
-
-<body>
-  <ul>
-    <?php
-    for ($i = 0; $i < count($posts); $i++) {
-      echo "<li>" . $posts_titles[$i] . "</li>";
-      echo "<ol>";
-      for ($j = 0; $j < count($posts[$i]); $j++) {
-        echo "<li>" . $posts[$i]["title"] . "</li>";
-      }
-      echo "</ol>";
-    }
-
-
-    ?>
-  </ul>
-</body>
-
-</html>
+  for ($j = 0; $j < count($posts); $j++) {
+    echo $posts[$j]["title"] . "<br>";
+    echo $posts[$j]["author"] . "<br>";
+    echo $posts[$j]["text"] . "<br><br>";
+  }
+}
