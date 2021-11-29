@@ -5,9 +5,6 @@
 
 $randomNumbers = [];
 
-
-$isFound = false;
-
 for ($i = 0; $i < 15; $i++) {
   $randomNumber = rand(1, 100);
   if (in_array($randomNumber, $randomNumbers)) {
